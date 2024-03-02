@@ -1,0 +1,614 @@
+fileFormatVersion: 2
+guid: 2d0703e445afd904bb8c1dfb926955a2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 2DGameTileSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2560
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc277700786feed4ca44fd0942b46796
+      internalID: -730403882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DGameTileSheet_1
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 2560
+        width: 1021
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3af2cc1494aa64448bc1c2de3fde904
+      internalID: -285629134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DGameTileSheet_3
+      rect:
+        serializedVersion: 2
+        x: 2049
+        y: 2560
+        width: 1023
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d343017af7102044db7db76124facd87
+      internalID: 500164149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DGameTileSheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2048
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50f654686a7e1a3498e205aa854c456c
+      internalID: -1135116334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DGameTileSheet_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2048
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27acb36b6774f994188849237580201e
+      internalID: 1871497342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DGameTileSheet_6
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 2048
+        width: 481
+        height: 509
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 505db3bdff2a33d4f9bcd034469d75f7
+      internalID: -1551402367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DGameTileSheet_7
+      rect:
+        serializedVersion: 2
+        x: 2557
+        y: 2049
+        width: 481
+        height: 509
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3ddf3787ea4dde499d5f77e8b9057c0
+      internalID: -1152028036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DGameTileSheet_10
+      rect:
+        serializedVersion: 2
+        x: 1582
+        y: 1536
+        width: 1443
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3495cc859628dc84db6666d98bdbd558
+      internalID: -1825970633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DGameTileSheet_12
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 1024
+        width: 1444
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab4ae93f4a8f474e8e6eb699e311176
+      internalID: -1690254100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DGameTileSheet_14
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1024
+        width: 1023
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ee70ecb15a4c04e907e3759e7a6bba
+      internalID: 994903099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DGameTileSheet_15
+      rect:
+        serializedVersion: 2
+        x: 2561
+        y: 1024
+        width: 511
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14e4eb22134e7a54ca67ea565e2679c1
+      internalID: -294304763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DGameTileSheet_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 511
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a5e147aa060a3e43863a982149465d8
+      internalID: -1274784874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DGameTileSheet_17
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 527
+        width: 467
+        height: 484
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efcd12ce170a94642a83d14a09b98d81
+      internalID: -1575608091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DGameTileSheet_18
+      rect:
+        serializedVersion: 2
+        x: 1548
+        y: 542
+        width: 486
+        height: 469
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b7f32dc8f50fc34697ce78abe591105
+      internalID: -1783915832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DGameTileSheet_19
+      rect:
+        serializedVersion: 2
+        x: 2573
+        y: 540
+        width: 455
+        height: 455
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d12a125839bcea6489f3554a3f7af53d
+      internalID: 357927489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DGameTileSheet_20
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 46
+        width: 377
+        height: 345
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5f9757a19f98ff46a974c251de1aa99
+      internalID: -1018554723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DGameTileSheet_2
+      rect:
+        serializedVersion: 2
+        x: 2046
+        y: 2049
+        width: 509
+        height: 509
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 753f53a4d9c4a5d4198a50ab474dcf20
+      internalID: -622559401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DGameTileSheet_8
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1538
+        width: 481
+        height: 509
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22d2499ab292df641a98d00dfab06de7
+      internalID: -93289757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DGameTileSheet_9
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 1538
+        width: 509
+        height: 509
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e67de226ef7ddf4ea8e103b62ec559d
+      internalID: 140852530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DGameTileSheet_24
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1537
+        width: 494
+        height: 509
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a053497636cef542be6fd9c926e291b
+      internalID: 1476274860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DGameTileSheet_11
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 513
+        width: 487
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b352813ffce574442b1d847b7166e4da
+      internalID: 2064704333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DGameTileSheet_13
+      rect:
+        serializedVersion: 2
+        x: 2060
+        y: 541
+        width: 486
+        height: 469
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79cc0f9a86c6d73448aae7de142c5dfe
+      internalID: 478945990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      2DGameTileSheet_0: -730403882
+      2DGameTileSheet_1: -285629134
+      2DGameTileSheet_10: -1825970633
+      2DGameTileSheet_11: 2064704333
+      2DGameTileSheet_12: -1690254100
+      2DGameTileSheet_13: 478945990
+      2DGameTileSheet_14: 994903099
+      2DGameTileSheet_15: -294304763
+      2DGameTileSheet_16: -1274784874
+      2DGameTileSheet_17: -1575608091
+      2DGameTileSheet_18: -1783915832
+      2DGameTileSheet_19: 357927489
+      2DGameTileSheet_2: -622559401
+      2DGameTileSheet_20: -1018554723
+      2DGameTileSheet_21: -1855618023
+      2DGameTileSheet_22: -335664470
+      2DGameTileSheet_23: 1935610039
+      2DGameTileSheet_24: 1476274860
+      2DGameTileSheet_3: 500164149
+      2DGameTileSheet_4: -1135116334
+      2DGameTileSheet_5: 1871497342
+      2DGameTileSheet_6: -1551402367
+      2DGameTileSheet_7: -1152028036
+      2DGameTileSheet_8: -93289757
+      2DGameTileSheet_9: 140852530
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
