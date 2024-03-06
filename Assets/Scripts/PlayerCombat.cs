@@ -7,6 +7,8 @@ public class PlayerCombat : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
+    public Animator animator;
+    private float timePassed = 0f;
 
     // Update is called once per frame
     void Update()
@@ -14,6 +16,13 @@ public class PlayerCombat : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Attack();
+            animator.SetBool("IsAttacking", true);
+        }
+        timePassed += Time.deltaTime;
+        if (timePassed > 1f)
+        {
+            animator.SetBool("IsAttacking", false);
+            timePassed = 0f;
         }
     }
 

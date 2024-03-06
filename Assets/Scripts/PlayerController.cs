@@ -1,53 +1,101 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
-    private float horizontal;
-    private float speed = 8f;
-    private float jumpingPower = 40f;
-    private bool isFacingRight = true;
-
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float jumpForce = 45f;
+    [SerializeField] private bool airControl = false;
+    [Range(0, .1f)] [SerializeField] private float movementSmooth = 0.3f;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Transform groundCheck;
 
-    // Update is called once per frame
-    void Update()
+    const float groundedRadius = .2f;
+    private bool isGrounded;
+    private Rigidbody2D rb;
+    private bool isFacingRight = true;
+    private Vector3 velocity = Vector3.zero;
+    private int pickupCounter = 0;
+
+    [Header("Events")]
+    [Space]
+
+    public UnityEvent OnLandEvent;
+
+    [System.Serializable]
+    public class BoolEvent : UnityEvent<bool> { }
+
+
+    private void Awake()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        rb = GetComponent<Rigidbody2D>();
+        if (OnLandEvent == null)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            OnLandEvent = new UnityEvent();
         }
-        if (Input.GetButtonDown("Jump") && rb.velocity.y > 0f)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-        }
-
-        Flip();
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        bool wasGrounded = isGrounded;
+        isGrounded = false;
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, groundLayer);
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].gameObject != gameObject)
+            {
+                isGrounded = true;
+                if (!wasGrounded)
+                {
+                    OnLandEvent.Invoke();
+                }
+            }
+        }
     }
 
-    private bool IsGrounded()
+    public void Move(float move, bool jump)
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        if (isGrounded || airControl)
+        {
+            Vector3 targetVelocity = new Vector2(move * 10f, rb.velocity.y);
+            rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, movementSmooth);
+            if (move > 0 && !isFacingRight)
+            {
+                Flip();
+            }
+            else if (move < 0 && isFacingRight)
+            {
+                Flip();
+            }
+        }
+        if (isGrounded && jump)
+        {
+            isGrounded = false;
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            if (rb.velocity.y > 0f)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            }
+        }
     }
 
     private void Flip()
     {
-        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
+        isFacingRight = !isFacingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Pickup")
         {
-            isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= 1f;
-            transform.localScale = localScale;
+            other.gameObject.SetActive(false);
+            pickupCounter++;
+            Debug.Log(pickupCounter.ToString());
         }
     }
 }

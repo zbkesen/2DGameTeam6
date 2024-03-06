@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class RatController : MonoBehaviour
 {
+
+    public Animator animator;
+    private float timePassed = 0f;
+    private Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D> ();
     }
 
     // Update is called once per frame
@@ -18,6 +23,12 @@ public class RatController : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject);
+        animator.SetBool("IsDead", true);
+        timePassed += Time.deltaTime;
+        rb.isKinematic = true;
+        if (timePassed > 5f)
+        {
+            Destroy(gameObject);
+        }
     }
 }
