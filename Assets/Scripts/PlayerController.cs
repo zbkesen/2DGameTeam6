@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,6 +18,13 @@ public class PlayerController : MonoBehaviour
     private bool isFacingRight = true;
     private Vector3 velocity = Vector3.zero;
     private int pickupCounter = 0;
+
+    [SerializeField] private Image life1;
+    [SerializeField] private Image life2;
+    [SerializeField] private Image life3;
+    [SerializeField] private Image noLife1;
+    [SerializeField] private Image noLife2;
+    [SerializeField] private Image noLife3;
 
     [Header("Events")]
     [Space]
@@ -73,6 +81,7 @@ public class PlayerController : MonoBehaviour
         if (isGrounded && jump)
         {
             isGrounded = false;
+            airControl = true;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             if (rb.velocity.y > 0f)
             {
@@ -89,13 +98,27 @@ public class PlayerController : MonoBehaviour
         transform.localScale = theScale;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Pickup")
         {
             other.gameObject.SetActive(false);
             pickupCounter++;
             Debug.Log(pickupCounter.ToString());
+        }
+    }
+
+    private void HUDController()
+    {
+        noLife1.gameObject.SetActive(false);
+        noLife2.gameObject.SetActive(false);
+        noLife3.gameObject.SetActive(false);
+
+        if (Input.GetKeyDown(KeyCode.F)) //this part will need to go into an update function after setting up collisions with rats
+        {
+            noLife3.gameObject.SetActive(true);
+            life3.gameObject.SetActive(false);
+            Debug.Log("F button pressed.");
         }
     }
 }

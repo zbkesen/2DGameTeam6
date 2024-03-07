@@ -10,19 +10,19 @@ public class EnemyAIController : MonoBehaviour
 
     [SerializeField] private Transform target;
     [SerializeField] private float chaseDistance = 10f;
-    [SerializeField] private float attackDistance = 0.8f;
-    [SerializeField] private float attachDelay = 1.0f;
+    //[SerializeField] private float attackDistance = 0.8f;
+    //[SerializeField] private float attackDelay = 1.0f;
     [SerializeField] private float speed = 200f;
     [SerializeField] private float nextWaypointDistance = 1f;
 
     Path path;
     int currentWaypoint = 0;
-    bool reachedEndOfPath = false;
+    public bool reachedEndOfPath = false;
 
     Seeker seeker;
     Rigidbody2D rb;
 
-    private float timeElapsed = 1f;
+    //private float timeElapsed = 1f;
 
     void Start()
     {
