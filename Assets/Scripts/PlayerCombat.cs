@@ -32,7 +32,7 @@ public class PlayerCombat : MonoBehaviour
 
         foreach(Collider2D enemy in  hitEnemies)
         {
-            enemy.GetComponent<RatController>().Die();
+            enemy.GetComponent<EnemyController>().Die();
             Debug.Log("Hit enemy.");
         }
     }

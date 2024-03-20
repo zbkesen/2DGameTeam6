@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public PlayerController controller;
     private float horizontal = 0f;
-    public float runSpeed = 50f;
+    public float runSpeed = 40f;
     private bool jump = false;
     public Animator animator;
 
@@ -17,8 +17,8 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
         if (Input.GetButtonDown("Jump"))
         {
-            jump = true;
             animator.SetBool("IsJumping", true);
+            jump = true;
         }
     }
 
