@@ -6,9 +6,10 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] private GameObject pointA;
     [SerializeField] private GameObject pointB;
-    [SerializeField] private float speed;
+    [SerializeField] private float speed = 4;
     private Rigidbody2D rb;
     private Transform currentPoint;
+    public Animator animator;
 
 
 
@@ -53,6 +54,8 @@ public class EnemyController : MonoBehaviour
 
     public void Die()
     {
-        //die
+        speed = 0;
+        animator.SetBool("IsDead", true);
+        GetComponent<Collider2D>().enabled = false;
     }
 }

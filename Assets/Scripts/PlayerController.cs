@@ -19,12 +19,9 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     private int pickupCounter = 0;
 
-    [SerializeField] private Image life1;
-    [SerializeField] private Image life2;
-    [SerializeField] private Image life3;
-    [SerializeField] private Image noLife1;
-    [SerializeField] private Image noLife2;
-    [SerializeField] private Image noLife3;
+    [SerializeField] private Image[] lives = new Image[3];
+    [SerializeField] private Sprite fullHeart;
+    [SerializeField] private Sprite brokenHeart;
 
     [Header("Events")]
     [Space]
@@ -42,6 +39,10 @@ public class PlayerController : MonoBehaviour
         {
             OnLandEvent = new UnityEvent();
         }
+    }
+
+    private void Update()
+    {
     }
 
     private void FixedUpdate()
@@ -106,19 +107,30 @@ public class PlayerController : MonoBehaviour
             pickupCounter++;
             Debug.Log(pickupCounter.ToString());
         }
+
+        if (other.gameObject.tag == "Enemy")
+        {
+            TakeDamage();
+        }
     }
 
-    private void HUDController()
-    {
-        noLife1.gameObject.SetActive(false);
-        noLife2.gameObject.SetActive(false);
-        noLife3.gameObject.SetActive(false);
+    private void TakeDamage()
+    {   
+        Sprite lives2 = lives[2].gameObject.GetComponent<Image>().sprite;
+        Sprite lives1 = lives[1].gameObject.GetComponent<Image>().sprite;
+        Sprite lives0 = lives[0].gameObject.GetComponent<Image>().sprite;
 
-        if (Input.GetKeyDown(KeyCode.F)) //this part will need to go into an update function after setting up collisions with rats
+        if (lives2 == fullHeart)
         {
-            noLife3.gameObject.SetActive(true);
-            life3.gameObject.SetActive(false);
-            Debug.Log("F button pressed.");
+            lives[2].gameObject.GetComponent<Image>().sprite = brokenHeart;
+        }
+        if (lives2 == brokenHeart && lives1 == fullHeart)
+        {
+            lives[1].gameObject.GetComponent<Image>().sprite = brokenHeart;
+        }
+        if (lives1 == brokenHeart && lives0 == fullHeart)
+        {
+            lives[0].gameObject.GetComponent<Image>().sprite = brokenHeart;
         }
     }
 }

@@ -19,7 +19,7 @@ public class PlayerCombat : MonoBehaviour
             animator.SetBool("IsAttacking", true);
         }
         timePassed += Time.deltaTime;
-        if (timePassed > 1f)
+        if (timePassed > 1.5f)
         {
             animator.SetBool("IsAttacking", false);
             timePassed = 0f;
@@ -30,7 +30,7 @@ public class PlayerCombat : MonoBehaviour
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-        foreach(Collider2D enemy in  hitEnemies)
+        foreach(Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<EnemyController>().Die();
             Debug.Log("Hit enemy.");
