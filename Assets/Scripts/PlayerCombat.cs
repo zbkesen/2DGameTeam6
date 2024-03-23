@@ -19,7 +19,7 @@ public class PlayerCombat : MonoBehaviour
             animator.SetBool("IsAttacking", true);
         }
         timePassed += Time.deltaTime;
-        if (timePassed > 1.5f)
+        if (timePassed >= 1.5f)
         {
             animator.SetBool("IsAttacking", false);
             timePassed = 0f;
@@ -37,10 +37,4 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        if (attackPoint == null)
-            return;
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-    }
 }

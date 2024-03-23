@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
     private bool isFacingRight = true;
     private Vector3 velocity = Vector3.zero;
     private int pickupCounter = 0;
+    private bool gameOver = false;
+    private bool foundHome = false;
+    private int catLives = 3;
 
     [SerializeField] private Image[] lives = new Image[3];
     [SerializeField] private Sprite fullHeart;
@@ -43,6 +46,18 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (catLives == 0)
+        {
+            gameOver = true;
+        }
+        if (gameOver == true)
+        {
+            //play game over scene
+        }
+        if (foundHome == true)
+        {
+            //play win scene
+        }
     }
 
     private void FixedUpdate()
@@ -101,16 +116,26 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Pickup")
+        if(other.gameObject.tag == "Pickup")
         {
             other.gameObject.SetActive(false);
             pickupCounter++;
             Debug.Log(pickupCounter.ToString());
+            Heal();
+            Debug.Log("Cat lives: " + catLives.ToString());
         }
 
-        if (other.gameObject.tag == "Enemy")
+        if(other.gameObject.tag == "Enemy")
         {
             TakeDamage();
+            Debug.Log("Cat lives: " + catLives.ToString());
+        }
+
+        if(other.gameObject.tag == "Home")
+        {
+            foundHome = true;
+            Debug.Log("Found home.");
+            //play win scene
         }
     }
 
@@ -120,17 +145,38 @@ public class PlayerController : MonoBehaviour
         Sprite lives1 = lives[1].gameObject.GetComponent<Image>().sprite;
         Sprite lives0 = lives[0].gameObject.GetComponent<Image>().sprite;
 
-        if (lives2 == fullHeart)
+        if(lives2 == fullHeart)
         {
             lives[2].gameObject.GetComponent<Image>().sprite = brokenHeart;
+            catLives--;
         }
-        if (lives2 == brokenHeart && lives1 == fullHeart)
+        if(lives2 == brokenHeart && lives1 == fullHeart)
         {
             lives[1].gameObject.GetComponent<Image>().sprite = brokenHeart;
+            catLives--;
         }
-        if (lives1 == brokenHeart && lives0 == fullHeart)
+        if(lives1 == brokenHeart && lives0 == fullHeart)
         {
             lives[0].gameObject.GetComponent<Image>().sprite = brokenHeart;
+            catLives--;
+        }
+    }
+
+    private void Heal()
+    {
+        Sprite lives2 = lives[2].gameObject.GetComponent<Image>().sprite;
+        Sprite lives1 = lives[1].gameObject.GetComponent<Image>().sprite;
+        Sprite lives0 = lives[0].gameObject.GetComponent<Image>().sprite;
+
+        if (lives0 == fullHeart && lives1 == brokenHeart)
+        {
+            lives[1].gameObject.GetComponent<Image>().sprite = fullHeart;
+            catLives++;
+        }
+        if (lives1 == fullHeart && lives2 == brokenHeart)
+        {
+            lives[2].gameObject.GetComponent<Image>().sprite = fullHeart;
+            catLives++;
         }
     }
 }
