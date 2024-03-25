@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -52,11 +53,11 @@ public class PlayerController : MonoBehaviour
         }
         if (gameOver == true)
         {
-            //play game over scene
+            SceneManager.LoadScene("GameOver");
         }
         if (foundHome == true)
         {
-            //play win scene
+            SceneManager.LoadScene("Win");
         }
     }
 
@@ -135,7 +136,7 @@ public class PlayerController : MonoBehaviour
         {
             foundHome = true;
             Debug.Log("Found home.");
-            //play win scene
+            SceneManager.LoadScene("Win");
         }
     }
 
