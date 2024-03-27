@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject helpScreen;
+
+    private void Awake()
+    {
+        helpScreen.SetActive(false);
+    }
+
     public void OnClickPlayButton()
     {
         SceneManager.LoadScene("LevelOne");
@@ -12,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     public void OnClickHelpButton()
     {
-        SceneManager.LoadScene("Help");
+        helpScreen.SetActive(true);
     }
 
     public void OnClickMainMenuButton()
@@ -24,5 +31,29 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Quit button pressed.");
+    }
+
+    public void OnClickReloadButton()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentScene);
+    }
+
+    public void OnClickBackButton()
+    {
+        helpScreen.SetActive(false);
+    }
+
+    public void OnClickNextLevelButton()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+        if (currentScene == "LevelOne")
+        {
+            SceneManager.LoadScene("LevelTwo");
+        }
+        if(currentScene == "LevelTwo")
+        {
+            SceneManager.LoadScene("FinalScore");
+        }
     }
 }

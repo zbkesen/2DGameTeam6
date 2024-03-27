@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Image[] lives = new Image[3];
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite brokenHeart;
+    [SerializeField] private GameObject losePanel;
+    [SerializeField] private GameObject winPanel;
 
     [Header("Events")]
     [Space]
@@ -43,6 +45,9 @@ public class PlayerController : MonoBehaviour
         {
             OnLandEvent = new UnityEvent();
         }
+
+        losePanel.SetActive(false);
+        winPanel.SetActive(false);
     }
 
     private void Update()
@@ -53,11 +58,11 @@ public class PlayerController : MonoBehaviour
         }
         if (gameOver == true)
         {
-            SceneManager.LoadScene("GameOver");
+            losePanel.SetActive(true);
         }
         if (foundHome == true)
         {
-            SceneManager.LoadScene("Win");
+            winPanel.SetActive(true);
         }
     }
 
@@ -136,7 +141,11 @@ public class PlayerController : MonoBehaviour
         {
             foundHome = true;
             Debug.Log("Found home.");
-            SceneManager.LoadScene("Win");
+        }
+
+        if(other.gameObject.tag == "Deathzone")
+        {
+            gameOver = true;
         }
     }
 
