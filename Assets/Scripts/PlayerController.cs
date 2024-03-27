@@ -134,7 +134,14 @@ public class PlayerController : MonoBehaviour
             audioSource.clip = buttonClick;
             audioSource.Play();
             Heal();
-            Debug.Log("Cat lives: " + catLives.ToString());
+            if(SceneManager.GetActiveScene().name == "LevelOne")
+            {
+                BoneCount.Instance.levelOneBones = pickupCounter;
+            }
+            else if (SceneManager.GetActiveScene().name == "LevelTwo")
+            {
+                BoneCount.Instance.levelTwoBones = pickupCounter;
+            }
         }
 
         if(other.gameObject.tag == "Enemy")

@@ -2,16 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject helpScreen;
+    [SerializeField] private TMP_Text levelOneBones;
+    [SerializeField] private TMP_Text levelTwoBones;
 
     private void Awake()
     {
         helpScreen.SetActive(false);
     }
-
+    private void Start()
+    {
+        if (SceneManager.GetActiveScene().name == "EndScene")
+        {
+            levelOneBones.text = BoneCount.Instance.levelOneBones.ToString() + "/5";
+            levelTwoBones.text = BoneCount.Instance.levelTwoBones.ToString() + "/9";
+        }
+    }
     public void OnClickPlayButton()
     {
         SceneManager.LoadScene("LevelOne");
@@ -53,7 +63,7 @@ public class GameManager : MonoBehaviour
         }
         if(currentScene == "LevelTwo")
         {
-            SceneManager.LoadScene("FinalScore");
+            SceneManager.LoadScene("EndScene");
         }
     }
 }
