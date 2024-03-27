@@ -11,6 +11,9 @@ public class EnemyController : MonoBehaviour
     private Transform currentPoint;
     public Animator animator;
 
+    [SerializeField] private AudioClip ratSqueak;
+    private AudioSource audioSource;
+
 
 
     // Start is called before the first frame update
@@ -18,6 +21,7 @@ public class EnemyController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         currentPoint = pointA.transform;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -54,6 +58,8 @@ public class EnemyController : MonoBehaviour
 
     public void Die()
     {
+        audioSource.clip = ratSqueak;
+        audioSource.Play();
         speed = 0;
         animator.SetBool("IsDead", true);
         GetComponent<Collider2D>().enabled = false;

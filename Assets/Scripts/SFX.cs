@@ -15,12 +15,7 @@ public class SFX : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = audioStart;
-        audioSource.Play(); 
-
-
-      
-        
-
+        audioSource.Play();
     }
 
     // Update is called once per frame

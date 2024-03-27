@@ -23,6 +23,10 @@ public class PlayerController : MonoBehaviour
     private bool foundHome = false;
     private int catLives = 3;
 
+    [SerializeField] private AudioClip buttonClick;
+    [SerializeField] private AudioClip meow;
+    private AudioSource audioSource;
+
     [SerializeField] private Image[] lives = new Image[3];
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite brokenHeart;
@@ -48,6 +52,7 @@ public class PlayerController : MonoBehaviour
 
         losePanel.SetActive(false);
         winPanel.SetActive(false);
+        audioSource = GetComponent<AudioSource> ();
     }
 
     private void Update()
@@ -126,7 +131,8 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             pickupCounter++;
-            Debug.Log(pickupCounter.ToString());
+            audioSource.clip = buttonClick;
+            audioSource.Play();
             Heal();
             Debug.Log("Cat lives: " + catLives.ToString());
         }
@@ -134,6 +140,8 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.tag == "Enemy")
         {
             TakeDamage();
+            audioSource.clip = meow;
+            audioSource.Play();
             Debug.Log("Cat lives: " + catLives.ToString());
         }
 

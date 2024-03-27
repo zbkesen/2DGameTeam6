@@ -10,6 +10,14 @@ public class PlayerMovement : MonoBehaviour
     private bool jump = false;
     public Animator animator;
 
+    [SerializeField] private AudioClip catJump;
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
 
     void Update()
     {
@@ -19,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("IsJumping", true);
             jump = true;
+            audioSource.clip = catJump;
+            audioSource.Play();
         }
     }
 
