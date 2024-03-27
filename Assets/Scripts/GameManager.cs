@@ -5,8 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject helpScreen;
 
+    //SFX
+    private AudioSource audioSource;
+    public AudioClip audioButtonclick;
+
+    [SerializeField] private GameObject helpScreen;
+    void Start()
+    {
+
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = audioButtonclick;
+
+    }
     private void Awake()
     {
         helpScreen.SetActive(false);
@@ -14,7 +25,9 @@ public class GameManager : MonoBehaviour
 
     public void OnClickPlayButton()
     {
+        
         SceneManager.LoadScene("LevelOne");
+        
     }
 
     public void OnClickHelpButton()

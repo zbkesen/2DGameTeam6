@@ -10,10 +10,25 @@ public class PlayerCombat : MonoBehaviour
     public Animator animator;
     private float timePassed = 0f;
 
+    //SFX
+    //private AudioSource audioSource;
+    //public AudioClip catMeow;
+    
+    //void Start()
+    //{
+
+    //     audioSource = GetComponent<AudioSource>();
+
+    //}
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
+           
+            //audioSource.clip = catMeow;
+            //audioSource.Play();
+
         {
             Attack();
             animator.SetBool("IsAttacking", true);
